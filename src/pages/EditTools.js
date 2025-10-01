@@ -249,7 +249,8 @@ const EditTools = () => {
   const handleDownload = () => {
     if (result?.downloadUrl) {
       const link = document.createElement('a');
-      link.href = `${result.downloadUrl}`;
+      // Use full backend URL for downloads since frontend and backend are on different domains
+      link.href = `https://moniconverter-api.onrender.com${result.downloadUrl}`;
       link.download = result.filename || 'edited-file';
       document.body.appendChild(link);
       link.click();

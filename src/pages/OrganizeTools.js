@@ -180,7 +180,8 @@ const OrganizeTools = () => {
 
   const handleDownload = (url, filename) => {
     const link = document.createElement('a');
-    link.href = `${url}`;
+    // Use full backend URL for downloads since frontend and backend are on different domains
+    link.href = `https://moniconverter-api.onrender.com${url}`;
     link.download = filename || 'processed-file';
     document.body.appendChild(link);
     link.click();
