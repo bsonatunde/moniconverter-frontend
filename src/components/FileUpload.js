@@ -3,15 +3,12 @@ import {
   Box,
   Paper,
   Typography,
-  Button,
   Alert,
-  CircularProgress,
   LinearProgress,
 } from '@mui/material';
 import { useDropzone } from 'react-dropzone';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import DownloadIcon from '@mui/icons-material/Download';
 
 const FileUpload = ({ 
   onFilesSelected, 
