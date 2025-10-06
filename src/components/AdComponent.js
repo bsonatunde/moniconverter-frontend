@@ -2,22 +2,9 @@ import React, { useEffect } from 'react';
 
 const AdComponent = ({ adSlot, width, height, style = {} }) => {
   useEffect(() => {
-    // Load AdSense script if not already loaded
-    if (typeof window !== 'undefined' && !window.adsbygoogle) {
-      const script = document.createElement('script');
-      script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2195135566849441';
-      script.async = true;
-      script.crossOrigin = 'anonymous';
-      document.head.appendChild(script);
-      
-      script.onload = () => {
-        try {
-          (window.adsbygoogle = window.adsbygoogle || []).push({});
-        } catch (err) {
-          console.error('AdSense error:', err);
-        }
-      };
-    } else if (window.adsbygoogle) {
+    // AdSense script is now loaded in index.html head section
+    // Just push the ad when component mounts
+    if (typeof window !== 'undefined' && window.adsbygoogle) {
       try {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
       } catch (err) {
