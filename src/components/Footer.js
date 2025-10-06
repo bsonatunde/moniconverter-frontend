@@ -220,6 +220,17 @@ const Footer = () => {
           </Typography>
           <Box sx={{ display: 'flex', gap: 3 }}>
             <Link
+              href="/ads.txt"
+              sx={{
+                color: 'grey.500',
+                textDecoration: 'none',
+                fontSize: '0.875rem',
+                '&:hover': { color: 'primary.light' }
+              }}
+            >
+              Ads.txt
+            </Link>
+            <Link
               href="#"
               sx={{
                 color: 'grey.500',
